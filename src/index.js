@@ -18,9 +18,9 @@ class App extends Component {
 	}
 
 	onCountryChange(country) {
-		console.log(country);
+		// console.log(country);
 		let url = `${Headlines_URL}&country=${country}`;
-		console.log(url);
+		// console.log(url);
 		let self = this;
 		axios.get(url).then(function(response){
 			self.setState({
@@ -30,10 +30,11 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state.response);
+		// console.log(this.state.response);
 		return (
 			<div>
 				<SelectCountry onSelectChange={this.onCountryChange.bind(this)} />
+				<br/>
 				<TopHeadlines topHeadlines={this.state.response} />
 			</div>
 		);
