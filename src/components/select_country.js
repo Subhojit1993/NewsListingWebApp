@@ -14,7 +14,7 @@ class SelectCountry extends Component {
 
 	render() {
 		return(
-			<select onChange={event => this.onSelectCountry(event.target.value)}>
+			<select className="select-bar" onChange={event => this.onSelectCountry(event.target.value)}>
 			  <option value="IN">India</option>
 			  <option value="SG">Singapore</option>
 			  <option value="NZ">New Zealand</option>

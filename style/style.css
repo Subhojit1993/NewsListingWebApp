@@ -1,0 +1,22 @@
+.headlines-block {
+	/*margin-top: 2%;*/
+	border: 1px solid black;
+}
+
+.image-text {
+	text-align: center;
+}
+
+.search-bar {
+	margin: 20px;
+	text-align: center;
+}
+
+.select-bar {
+	margin: 20px;
+	text-align: center;
+}
+
+.search-bar input {
+	width: 100%;
+}

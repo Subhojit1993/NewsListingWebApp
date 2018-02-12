@@ -1,7 +1,10 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SelectCountry from './components/select_country';
 import TopHeadlines from './components/top_headlines';
+import SearchBar from './components/search_bar';
+import NewsListing from './components/news_listing';
 import axios from 'axios';
 // import NewsListing from './components/news_listing';
 const API_KEY = '3bc7644ba19948b99a91aec1e5aaab72';
@@ -12,9 +15,11 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-			response: ''
+			response: '',
+			searchResponse: ''
 		};
 		this.onCountryChange('IN');
+		this.newsSearch('bitcoin');
 	}
 
 	onCountryChange(country) {
@@ -29,16 +34,37 @@ class App extends Component {
 		});
 	}
 
+	newsSearch(term) {
+		// console.log(term);
+		if(term === '') {
+			return;
+		}
+		let url = `${Headlines_URL}&q=${term}`;
+		let self = this;
+		axios.get(url).then(function(response){
+			self.setState({
+				searchResponse: response
+			});
+		});
+	}
+
 	render() {
+		const newsSearch = _.debounce((term) => { this.newsSearch(term) }, 300)
 		// console.log(this.state.response);
 		return (
 			<div>
-				<SelectCountry onSelectChange={this.onCountryChange.bind(this)} />
+				<div>
+					<div className="col-xs-12 col-sm-4"><SelectCountry onSelectChange={this.onCountryChange.bind(this)} /></div>
+					<div className="col-xs-12 col-sm-6"><SearchBar onSearchTermChange={this.newsSearch.bind(this)} /></div>
+				</div>	
 				<br/>
-				<TopHeadlines topHeadlines={this.state.response} />
+				<div>
+					<div className="col-xs-12 col-sm-4 media headlines-block"><TopHeadlines topHeadlines={this.state.response} /></div>
+					<div className="col-xs-12 col-sm-6"><NewsListing newsList={this.state.searchResponse} /></div>
+				</div>	
 			</div>
 		);
 	}
 }
 
-ReactDOM.render(<App />, document.querySelector('.container')); 
+ReactDOM.render(<App />, document.querySelector('.contained')); 

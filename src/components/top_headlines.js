@@ -12,14 +12,14 @@ class TopHeadlines extends Component {
 		if(this.props.topHeadlines.data != undefined) {
 			// console.log(this.props.topHeadlines.data.articles);
 			this.props.topHeadlines.data.articles.forEach(function(element) {
-				console.log(element);
+				// console.log(element);
 				htmlContent.push(
-								<div>
+								<div key={element.publishedAt}>
 									<div className="media-left">
-								      <img width={64} height={64} src={element.urlToImage} alt="thumbnail" />
+								      <img className="image-text" width={64} height={64} src={element.urlToImage} alt="News &nbsp; &nbsp;" />
 								    </div>
 									<div className="media-body">
-										<a href={element.url} key={element.publishedAt}>{element.title}</a>
+										<a href={element.url}>{element.title}</a>
 									</div>
 									<br/>
 								</div>
@@ -33,7 +33,8 @@ class TopHeadlines extends Component {
 	render() {
 		// console.log(this.props.topHeadlines);
 		return (
-			<div className="col-xs-12 col-sm-4 media">
+			<div>
+				<br/>
 				{this.newsHeadlines()}
 			</div>
 		);
