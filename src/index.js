@@ -58,9 +58,9 @@ class App extends Component {
 					<div className="media headlines-block"><TopHeadlines topHeadlines={this.state.response} /></div>
 				</div>	
 				<br/>
-				<div className="col-xs-12 col-sm-6">
+				<div className="col-xs-12 col-sm-8 search-news">
 					<div><SearchBar onSearchTermChange={this.newsSearch.bind(this)} /></div>
-					<div><NewsListing newsList={this.state.searchResponse} /></div>
+					<div className="media"><NewsListing newsList={this.state.searchResponse} /></div>
 				</div>	
 			</div>
 		);

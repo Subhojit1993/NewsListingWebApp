@@ -8,8 +8,17 @@
 }
 
 .search-bar {
-	margin: 20px;
+	/*margin: 20px;*/
+	/*margin-left: 2%;*/
+	margin-top: 2%;
+	margin-bottom: 2%;
+	width: 100%;
 	text-align: center;
+}
+
+.search-news {
+	width: 100%;
+	border: 1px solid black;
 }
 
 .lebel-input {
@@ -44,6 +53,12 @@
     font-family: initial;
 }
 
+.news-search-text {
+	font-size: 18px;
+    /*margin-left: 6%;*/
+    font-family: initial;
+}
+
 .country-text {
 	margin-top: 5%;
 }
@@ -51,4 +66,36 @@
 .selected-country {
 	display: inline-block;
 	text-align: center;
+}
+
+.news-margin {
+	margin: 0%;
+	margin-top: 0%;
+}
+
+.image-link {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+	.search-news {
+		/*margin-top: 3%;*/
+		width: 100%;
+		border: 1px solid black;
+	}
+
+	.search-bar {
+		/*margin: 20px;*/
+		margin-left: 1%;
+		margin-top: 5%;
+		margin-bottom: 2%;
+		width: 100%;
+		text-align: center;
+	}
+
+	.news-margin {
+		margin: 5%;
+		margin-top: 1%;
+	}
 }

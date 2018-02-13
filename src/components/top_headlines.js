@@ -16,7 +16,7 @@ class TopHeadlines extends Component {
 				htmlContent.push(
 								<div key={element.publishedAt} className="headlines-margin">
 									<div className="media-left">
-								      <img className="image-text" width={64} height={64} src={element.urlToImage} alt="News &nbsp; &nbsp;" />
+								      <a href={element.url} className="image-link"><img className="image-text" width={64} height={64} src={element.urlToImage} alt="News &nbsp; &nbsp;" /></a>
 								    </div>
 									<div className="media-body">
 										<a href={element.url}>{element.title}</a>
@@ -35,7 +35,7 @@ class TopHeadlines extends Component {
 		return (
 			<div>
 				<br/>
-				<h4 className="top-headlines-text">Top Headlines Today</h4>
+				<h4 className="top-headlines-text">Headlines Today</h4>
 				<br/>
 				{this.newsHeadlines()}
 			</div>
