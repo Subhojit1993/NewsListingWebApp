@@ -12,11 +12,43 @@
 	text-align: center;
 }
 
-.select-bar {
+.lebel-input {
 	margin: 20px;
-	text-align: center;
+    text-align: center;
+    width: 100%;
+}
+
+.select-bar {
+	margin-left: 5%;
+	padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: black;
+    background: beige;
+    border-radius: 10px;
 }
 
 .search-bar input {
 	width: 100%;
+}
+
+.headlines-margin {
+	margin: 5%;
+	margin-top: 1%;
+}
+
+.top-headlines-text {
+	font-size: 18px;
+    margin-left: 6%;
+    font-family: initial;
+}
+
+.country-text {
+	margin-top: 5%;
+}
+
+.selected-country {
+	display: inline-block;
+	text-align: center;
 }

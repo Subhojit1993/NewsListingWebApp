@@ -53,14 +53,14 @@ class App extends Component {
 		// console.log(this.state.response);
 		return (
 			<div>
-				<div>
-					<div className="col-xs-12 col-sm-4"><SelectCountry onSelectChange={this.onCountryChange.bind(this)} /></div>
-					<div className="col-xs-12 col-sm-6"><SearchBar onSearchTermChange={this.newsSearch.bind(this)} /></div>
+				<div className="col-xs-12 col-sm-4">
+					<div className="selected-country"><SelectCountry onSelectChange={this.onCountryChange.bind(this)} /></div>
+					<div className="media headlines-block"><TopHeadlines topHeadlines={this.state.response} /></div>
 				</div>	
 				<br/>
-				<div>
-					<div className="col-xs-12 col-sm-4 media headlines-block"><TopHeadlines topHeadlines={this.state.response} /></div>
-					<div className="col-xs-12 col-sm-6"><NewsListing newsList={this.state.searchResponse} /></div>
+				<div className="col-xs-12 col-sm-6">
+					<div><SearchBar onSearchTermChange={this.newsSearch.bind(this)} /></div>
+					<div><NewsListing newsList={this.state.searchResponse} /></div>
 				</div>	
 			</div>
 		);

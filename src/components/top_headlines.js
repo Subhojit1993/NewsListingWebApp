@@ -14,7 +14,7 @@ class TopHeadlines extends Component {
 			this.props.topHeadlines.data.articles.forEach(function(element) {
 				// console.log(element);
 				htmlContent.push(
-								<div key={element.publishedAt}>
+								<div key={element.publishedAt} className="headlines-margin">
 									<div className="media-left">
 								      <img className="image-text" width={64} height={64} src={element.urlToImage} alt="News &nbsp; &nbsp;" />
 								    </div>
@@ -34,6 +34,8 @@ class TopHeadlines extends Component {
 		// console.log(this.props.topHeadlines);
 		return (
 			<div>
+				<br/>
+				<h4 className="top-headlines-text">Top Headlines Today</h4>
 				<br/>
 				{this.newsHeadlines()}
 			</div>
